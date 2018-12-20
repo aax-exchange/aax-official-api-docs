@@ -546,7 +546,7 @@ The top N<sup>1</sup> bids and asks, updated N<sup>2</sup> times per second.
 - **Stream Name:** {symbol}@book_{level}
 - **Supported levels (N<sup>1</sup>):** 20, 50
 - **Update interval (N<sup>2</sup>):** 300ms
-- **Exampl:e** BTCUSDT@book_50
+- **Example** BTCUSDT@book_50
 
 **Example event**
 ```
