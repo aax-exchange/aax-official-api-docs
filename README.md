@@ -552,7 +552,7 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 
 - **Stream Name:** {symbol}@book_{level}
 - **Supported levels (N<sup>1</sup>):** 20, 50
-- **Update interval (N<sup>2</sup>):** 300ms
+- **Update interval (N<sup>2</sup>):** 300 ms
 - **Example:** BTCUSDT@book_50
 
 **Example event**
@@ -574,3 +574,74 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
   ]
 }
 ```
+
+
+## Trades Stream
+  
+Individual trades when an order is executed.
+
+- **Stream Name:** {symbol}@trade
+- **Example:** BTCUSDT@trade
+
+**Example event**
+```
+{
+  “e”: “BTCUSDT@trade”,
+  "t": 123456789000,    // Event time (milliseconds)
+  "p": “6573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
+  "q": “15"             // Quantity
+}
+```
+
+
+## Tickers Stream (real-time)
+  
+Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
+
+- **Stream Name:** tickers
+
+**Example event**
+```
+{
+    “e”: “tickers”,
+    "t": 123456789000,    // Event time (milliseconds)
+    “tickers”: [
+        {
+           “s”: “BTCUSDT”,  // Symbol
+           "o": “6573.2",   // Open price
+           "h": “6573.2",   // High price
+           "l": “6573.2",   // Low price
+           "c": “6573.2",   // Close price
+           "v": “1500",     // Traded volume of base asset
+           "q": “15"        // Traded volume of quote asset
+         }
+    ]
+}
+// Notes:
+// 24 hrs change = ((close-open)/open) * 100.0
+```
+
+## Candlesticks Stream (real-time)
+  
+Real-time candlesticks.
+
+- **Stream Name:** {symbol}@{timeframe}_candles
+- **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 1d
+- **Update interval:** 1 second
+- **Example:** BTCUSDT@1m_candles
+
+**Example event**
+```
+{
+    “e”: BTCUSDT@1m_candles”,
+    "t": 123456789000,    // Event time (milliseconds)
+    "s": “123456789",     // start time of the candlestick (seconds)
+    "o": “6573.2",        // Open price
+    "h": “6573.2",        // High price
+    "l": “6573.2",        // Low price
+    "c": “6573.2",        // Close price
+    "v": “1500",          // Traded volume of base asset
+    "q": “15"             // Traded volume of quote asset
+}
+```
+
