@@ -526,3 +526,44 @@ atomintl at atomintl.com
 | details | object | Error details | No |
 | message | string | Return message | No |
 | timestamp | string | Time stamp | No |
+
+
+
+Market Data Services
+================
+Websocket APIs
+
+**Version:** 1.0  
+
+## Overview
+All websocket data can be accessed via wss://{example_host}/ws/1/{streamName1}/{streamName2}
+
+
+## Orderbook Stream
+  
+The top N<sup>1</sup> bids and asks, updated N<sup>2</sup> times per second.
+
+- **Stream Name:** {symbol}@book_{level}
+- **Supported levels (N<sup>1</sup>):** 20, 50
+- **Update interval (N<sup>2</sup>):** 300ms
+- **Exampl:e** BTCUSDT@book_50
+
+**Example event**
+```
+{
+  “e”: “BTCUSDT@book_50”,
+  "t": 123456789000,    // Event time (milliseconds)
+  "bids": [             // Bids to be updated
+    [
+      "0.0024",         // price level to be updated
+      "10"              // quantity
+    ]
+  ],
+  "asks": [             // Asks to be updated
+    [
+      "0.0026",         // price level to be updated
+      "100"             // quantity
+    ]
+  ]
+}
+```
