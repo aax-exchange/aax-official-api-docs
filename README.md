@@ -538,15 +538,22 @@ Websocket APIs
 ## Overview
 All websocket data can be accessed via wss://{example_host}/ws/1/{streamName1}/{streamName2}
 
+One or multiple streams can be subscribed in each connection. There are different streams for different market data and each has independent update intervals. The followings are a list of streams available:
 
-## Orderbook Stream
+- Orderbook (snapshot)
+- Trades
+- Tickers (real-time)
+- Candlesticks (real-time)
+
+
+## Orderbook Stream (snapshot)
   
-The top N<sup>1</sup> bids and asks, updated N<sup>2</sup> times per second.
+Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> milliseconds.
 
 - **Stream Name:** {symbol}@book_{level}
 - **Supported levels (N<sup>1</sup>):** 20, 50
 - **Update interval (N<sup>2</sup>):** 300ms
-- **Example** BTCUSDT@book_50
+- **Example:** BTCUSDT@book_50
 
 **Example event**
 ```
