@@ -599,6 +599,7 @@ Individual trades when an order is executed.
 Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
 
 - **Stream Name:** tickers
+- **Update interval:** 1 second
 
 **Example event**
 ```
