@@ -305,35 +305,6 @@ Individual trades when an order is executed.
 }
 ```
 
-
-## Tickers Stream (real-time)
-  
-Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
-
-- **Stream Name:** tickers
-- **Update interval:** 1 second
-
-**Example event**
-```
-{
-    “e”: “tickers”,
-    "t": 123456789000,    // Event time (milliseconds)
-    “tickers”: [
-        {
-           “s”: “BTCUSDT”,  // Symbol
-           "o": “6573.2",   // Open price
-           "h": “6573.2",   // High price
-           "l": “6573.2",   // Low price
-           "c": “6573.2",   // Close price
-           "v": “1500",     // Traded volume of base asset
-           "q": “15"        // Traded volume of quote asset
-         }
-    ]
-}
-// Notes:
-// 24 hrs change = ((close-open)/open) * 100.0
-```
-
 ## Candlesticks Stream (real-time)
   
 Real-time candlesticks.
@@ -346,15 +317,40 @@ Real-time candlesticks.
 **Example event**
 ```
 {
-    “e”: BTCUSDT@1m_candles”,
+    “e”: "BTCUSDT@1m_candles”,
     "t": 123456789000,    // Event time (milliseconds)
     "s": “123456789",     // start time of the candlestick (seconds)
     "o": “6573.2",        // Open price
     "h": “6573.2",        // High price
     "l": “6573.2",        // Low price
     "c": “6573.2",        // Close price
-    "v": “1500",          // Traded volume of base asset
-    "q": “15"             // Traded volume of quote asset
+    "v": “1500",          // Traded volume
 }
 ```
 
+## All Tickers Stream
+  
+Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
+Server initially sends all the tickers to client immediately connected, afterward it sends only the tickers that are changed since last update. 
+
+- **Stream Name:** tickers
+- **Update interval:** 2 second
+
+**Example event**
+```
+{
+    “e”: "tickers”,
+    "tickers" : [
+      {
+        "s": “BTCUSDT",       // Symbol   
+        "o": “6573.2",        // Open price
+        "h": “6573.2",        // High price
+        "l": “6573.2",        // Low price
+        "c": “6573.2",        // Close price
+        "v": “1500",          // Traded volume
+      }    
+    ]
+}
+// Notes:
+// 24 hrs change = ((close-open)/open) * 100.0
+```
