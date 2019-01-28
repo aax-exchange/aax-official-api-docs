@@ -331,7 +331,7 @@ Real-time candlesticks.
 ## All Tickers Stream
   
 Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
-Server initially sends all the tickers to client immediately connected, afterward it sends only the tickers that are changed since last update. 
+Server initially sends all the tickers to client immediately after connected, and then it sends only the tickers that are changed since last update. 
 
 - **Stream Name:** tickers
 - **Update interval:** 2 second
