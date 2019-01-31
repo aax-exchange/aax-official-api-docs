@@ -310,7 +310,7 @@ Individual trades when an order is executed.
 Real-time candlesticks.
 
 - **Stream Name:** {symbol}@{timeframe}_candles
-- **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 1d
+- **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
 - **Update interval:** 1 second
 - **Example:** BTCUSDT@1m_candles
 
