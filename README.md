@@ -328,6 +328,15 @@ Real-time candlesticks.
 }
 ```
 
+**Example case 1**
+
+Below is an example of data sent from server, whenever price changed within 15 minutes (in this example), server shall push new data for the same candlestick, see the 2nd message in the example. Until time expired and another candlestick created, see the 3rd message.
+```
+{"c":"3603.40000000","e":"BTCUSDT@15m_candles","h":"3603.50000000","l":"3329.60000000","o":"3329.60000000","s":1550198700,"t":1550198911,"v":"97.65297000"}
+{"c":"3604.30000000","e":"BTCUSDT@15m_candles","h":"3604.30000000","l":"3329.60000000","o":"3329.60000000","s":1550198700,"t":1550199187,"v":"195.32950000"}
+{"c":"3604.30000000","e":"BTCUSDT@15m_candles","h":"3604.30000000","l":"3604.30000000","o":"3604.30000000","s":1550199600,"t":1550199600,"v":"0.00000000"}
+```
+
 ## All Tickers Stream
   
 Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
