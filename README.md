@@ -290,7 +290,7 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 
 ## Trades Stream
   
-Individual trades when an order is executed. For each new connection, server shall send the last 50 trades it. There is a rate limit of how many trades server will send to clients.
+Individual trades when an order is executed. For each new connection, server shall send the last 50 trades to it. There is a rate limit of how many trades server will send to clients.
 
 - **Stream Name:** {symbol}@trade
 - **Example:** BTCUSDT@trade
