@@ -324,7 +324,7 @@ Real-time candlesticks.
     "h": “6573.2",        // High price
     "l": “6573.2",        // Low price
     "c": “6573.2",        // Close price
-    "v": “1500",          // Traded volume
+    "v": “1500",          // Traded volume (price x qty)
 }
 ```
 
