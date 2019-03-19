@@ -324,7 +324,7 @@ Real-time candlesticks.
     "h": “6573.2",        // High price
     "l": “6573.2",        // Low price
     "c": “6573.2",        // Close price
-    "v": “1500",          // Traded volume (price x qty)
+    "v": “1500",          // Traded volume (price x qty for spot, qty for futures)
 }
 ```
 
@@ -358,7 +358,7 @@ Server initially sends all the tickers to client immediately after connected, an
         "h": “6573.2",        // High price
         "l": “6573.2",        // Low price
         "c": “6573.2",        // Close price
-        "v": “1500",          // Quote volume (price x qty)
+        "v": “1500",          // Quote volume (price x qty for spot, qty for futures)
       }    
     ]
 }
