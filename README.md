@@ -257,6 +257,15 @@ One or multiple streams can be subscribed in each connection. There are differen
 - Tickers (real-time)
 - Candlesticks (real-time)
 
+## Empty event
+Server may send empty event to client if there is nothing to send to client right after newly connected.
+
+
+**Example**
+```
+{"e":"empty"}
+```
+
 
 ## Orderbook Stream (snapshot)
   
