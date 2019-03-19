@@ -258,8 +258,7 @@ One or multiple streams can be subscribed in each connection. There are differen
 - Candlesticks (real-time)
 
 ## Empty event
-Server may send empty event to client if there is nothing to send to client right after newly connected.
-
+Server may send empty event to client if there is nothing to send right after the connection is newly established.
 
 **Example**
 ```
