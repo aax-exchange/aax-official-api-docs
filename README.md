@@ -248,7 +248,7 @@ Websocket APIs
 **Version:** 1.0  
 
 ## Overview
-All websocket data can be accessed via wss://{example_host}/ws/1/{streamName1}/{streamName2}
+All websocket data can be accessed via wss://{example_host}/ws/2/{streamName1}/{streamName2}
 
 One or multiple streams can be subscribed in each connection. There are different streams for different market data and each has independent update intervals. The followings are a list of streams available:
 
