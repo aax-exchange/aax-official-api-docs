@@ -265,6 +265,17 @@ Server may send empty event to client if there is nothing to send right after th
 {"e":"empty"}
 ```
 
+## System event
+Server may send system event to client to indicate a system status change. Possible status are:
+
+- active (System is active and normal)
+- inactive (Market data is not available)
+
+**Example**
+```
+{"e":"system","status":"active"}
+```
+
 
 ## Orderbook Stream (snapshot)
   
