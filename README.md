@@ -257,6 +257,23 @@ One or multiple streams can be subscribed in each connection. There are differen
 - Tickers (real-time)
 - Candlesticks (real-time)
 
+## Subscribe streams
+Instead of specifying stream names in the URL, you can also subscribe and unsubscribe any streams on-demand, by sending:
+
+**Example**
+```
+{"e":"subscribe”,”stream”:”BTCUSDT@book_50“}
+or
+{“e”:”unsubscribe”,”stream”:”BTCUSDT@book_50"}
+```
+
+Then you will receive a reply event:
+```
+{“e”:”reply”,”status”:”ok”}
+or
+{“e”:”reply”,”status”:”error”}
+```
+
 ## Empty event
 Server may send empty event to client if there is nothing to send right after the connection is newly established.
 
