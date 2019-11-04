@@ -420,3 +420,18 @@ Mark Price example request:
 curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12}}' -H 'content-type: application/json;' http://127.0.0.1:2345/v1/futures/mark
 ```
 
+## Mark Price Stream
+  
+
+- **Stream Name:**  {symbol}@mark
+- **Update interval:** Variable
+- **Example:** BTCUSDFP@mark
+
+**Example event**
+```
+{
+  "e":"BTCUSDFP@mark",  // event name
+  "p":"9000.12000000",  // price
+  "t":1572858173963     // Event time (milliseconds)
+}
+```
