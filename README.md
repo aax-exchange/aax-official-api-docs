@@ -401,3 +401,22 @@ Server initially sends all the tickers to client immediately after connected, an
 // Notes:
 // 24 hrs change = ((close-open)/open) * 100.0
 ```
+
+
+## MDS Inbound Requests
+  
+MDS can accept inbound requests for:
+ - Index Price
+ - Mark Price
+
+
+** Index Price example request **
+```
+curl -d '{"time": 1564143433, "symbol": "BTCUSDFP", "index": 9000.12}' -H 'content-type: application/json;' http://127.0.0.1:2345/v1/futures/index
+```
+
+** Mark Price example request **
+```
+curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12}}' -H 'content-type: application/json;' http://127.0.0.1:2345/v1/futures/mark
+```
+
