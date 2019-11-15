@@ -435,3 +435,23 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
   "t":1572858173963     // Event time (milliseconds)
 }
 ```
+
+## Delta Order Book
+  
+
+Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> milliseconds. If the quantity is 0, remove that price level. If the same price level exists in client's application, update the latest quantity. There is no guarantee the price levels are in any order. It is guaranteed that after each message, the bid and ask sides shall not exceed N<sup>1</sup> levels.
+
+- **Stream Name:** {symbol}@delta_book.{level}
+- **Supported levels (N<sup>1</sup>):** 50
+- **Update interval (N<sup>2</sup>):** 50 ms
+- **Example:** BTCUSDT@delta_book.50
+
+**Example event**
+```
+{
+  "e":"BTCUSDT@delta_book.50",            // event name
+  "bids": [ ["9000.12000000", "0.12"] ],  // array of price and qty on bid side
+  "asks": [ ["9000.35000000", "0.83"] ],  // array of price and qty on ask side
+  "t":1572858173963                       // Event time (milliseconds)
+}
+```
