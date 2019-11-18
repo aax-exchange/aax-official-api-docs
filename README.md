@@ -449,9 +449,9 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 **Example event**
 ```
 {
-  "e":"BTCUSDT@delta_book.50",            // event name
-  "bids": [ ["9000.12000000", "0.12"] ],  // array of price and qty on bid side
-  "asks": [ ["9000.35000000", "0.83"] ],  // array of price and qty on ask side
-  "t":1572858173963                       // Event time (milliseconds)
+  "e":"BTCUSDT@delta_book.50",              // event name
+  "bids": [ [9000.12345678, 0.123456] ],    // array of price and qty on bid side
+  "asks": [ [9001, 0.83] ],                 // array of price and qty on ask side
+  "t":1572858173963                         // Event time (milliseconds)
 }
 ```
