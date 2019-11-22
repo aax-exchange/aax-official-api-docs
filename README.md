@@ -420,6 +420,28 @@ Mark Price example request:
 curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12}}' -H 'content-type: application/json;' http://127.0.0.1:2345/v1/futures/mark
 ```
 
+## Index Price Stream
+  
+
+- **Stream Name:** {symbol}_INDEX@{timeframe}_candles
+- **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
+- **Update interval:** 1 second
+- **Example:** BTCUSDFP_INDEX@1m_candles
+
+**Example event**
+```
+{
+    “e”: "BTCUSDFP_INDEX@1m_candles”,
+    "t": 123456789000,    // Event time (milliseconds)
+    "s": “123456789",     // start time of the candlestick (seconds)
+    "o": “6573.2",        // Open price
+    "h": “6573.2",        // High price
+    "l": “6573.2",        // Low price
+    "c": “6573.2",        // Close price
+    "v": “1500",          // Traded volume (price x qty for spot, qty for futures)
+}
+```
+
 ## Mark Price Stream
   
 
