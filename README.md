@@ -290,7 +290,7 @@ Server may send system event to client to indicate a system status change. Possi
 
 **Example**
 ```
-{"e":"system","status":"active"}
+{"e":"system","status":[{"spots":"active"},{"futures":"active"}]}
 ```
 
 
