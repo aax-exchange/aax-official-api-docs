@@ -431,14 +431,14 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 **Example event**
 ```
 {
-    “e”: "BTCUSDFP_INDEX@1m_candles”,
+    “e”: "BTCUSDFP_INDEX@1m_candles",
     "t": 123456789000,    // Event time (milliseconds)
-    "s": “123456789",     // start time of the candlestick (seconds)
-    "o": “6573.2",        // Open price
-    "h": “6573.2",        // High price
-    "l": “6573.2",        // Low price
-    "c": “6573.2",        // Close price
-    "v": “1500",          // Traded volume (price x qty for spot, qty for futures)
+    "s": "123456789",     // start time of the candlestick (seconds)
+    "o": "6573.2",        // Open price
+    "h": "6573.2",        // High price
+    "l": "6573.2",        // Low price
+    "c": "6573.2",        // Close price
+    "v": "1500",          // Traded volume (price x qty for spot, qty for futures)
 }
 ```
 
