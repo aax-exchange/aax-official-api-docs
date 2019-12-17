@@ -262,16 +262,16 @@ Instead of specifying stream names in the URL, you can also subscribe and unsubs
 
 **Example**
 ```
-{"e":"subscribe”,”stream”:”BTCUSDT@book_50“}
+{"e":"subscribe","stream":"BTCUSDT@book_50"}
 or
-{“e”:”unsubscribe”,”stream”:”BTCUSDT@book_50"}
+{"e":"unsubscribe","stream":"BTCUSDT@book_50"}
 ```
 
 Then you will receive a reply event:
 ```
-{“e”:”reply”,”status”:”ok”}
+{"e":”reply”,"status":"ok"}
 or
-{“e”:”reply”,”status”:”error”}
+{"e":”reply”,"status":"error"}
 ```
 
 ## Empty event
@@ -306,7 +306,7 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 **Example event**
 ```
 {
-  “e”: “BTCUSDT@book_50”,
+  "e": "BTCUSDT@book_50",
   "t": 123456789000,    // Event time (milliseconds)
   "bids": [             // Bids to be updated
     [
@@ -334,10 +334,10 @@ Individual trades when an order is executed. For each new connection, server sha
 **Example event**
 ```
 {
-  “e”: “BTCUSDT@trade”,
+  "e": "BTCUSDT@trade",
   "t": 123456789000,    // Event time (milliseconds)
-  "p": “6573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
-  "q": “15"             // Quantity
+  "p": "6573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
+  "q": "15"             // Quantity
 }
 ```
 
@@ -353,7 +353,7 @@ Real-time candlesticks.
 **Example event**
 ```
 {
-    “e”: "BTCUSDT@1m_candles”,
+    "e": "BTCUSDT@1m_candles",
     "t": 123456789000,    // Event time (milliseconds)
     "s": “123456789",     // start time of the candlestick (seconds)
     "o": “6573.2",        // Open price
@@ -386,7 +386,7 @@ Server initially sends all the tickers to client immediately after connected, an
 **Example event**
 ```
 {
-    “e”: "tickers”,
+    "e": "tickers",
     "tickers" : [
       {
         "s": “BTCUSDT",       // Symbol   
@@ -431,7 +431,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 **Example event**
 ```
 {
-    “e”: "BTCUSDFP_INDEX@1m_candles",
+    "e": "BTCUSDFP_INDEX@1m_candles",
     "t": 123456789000,    // Event time (milliseconds)
     "s": "123456789",     // start time of the candlestick (seconds)
     "o": "6573.2",        // Open price
