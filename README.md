@@ -387,6 +387,7 @@ Server initially sends all the tickers to client immediately after connected, an
 ```
 {
     "e": "tickers",
+    "t": 123456789000,    // Event time (milliseconds)    
     "tickers" : [
       {
         "s": “BTCUSDT",       // Symbol   
