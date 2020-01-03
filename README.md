@@ -257,6 +257,22 @@ One or multiple streams can be subscribed in each connection. There are differen
 - Tickers (real-time)
 - Candlesticks (real-time)
 
+All streams are also available in restful APIs via https://{example_host}/{streamName}?limit=100, with one additional stream for recently traded list as shown below:
+
+**Example trades event**
+```
+{
+  "e": "BTCUSDT@trades",
+  "trades": [      
+    {
+      "t": 123456789000,    // trade time (milliseconds)
+      "p": "6573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
+      "q": "15"             // Quantity
+    }
+  ]
+}
+```
+
 ## Subscribe streams
 Instead of specifying stream names in the URL, you can also subscribe and unsubscribe any streams on-demand, by sending:
 
