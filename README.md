@@ -483,6 +483,7 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 - **Supported levels (N<sup>1</sup>):** 50
 - **Update interval (N<sup>2</sup>):** 100 ms (default)
 - **Example:** BTCUSDT@delta_book.50
+- [Live Demo](http://52.221.164.49:1234/streams/BTCUSDFP@delta_book.50)
 
 **Example event**
 ```
