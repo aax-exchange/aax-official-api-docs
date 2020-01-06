@@ -464,6 +464,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 - **Stream Name:**  {symbol}@mark
 - **Update interval:** Variable
 - **Example:** BTCUSDFP@mark
+- [Live Demo](http://52.221.164.49:1234/BTCUSDFP@mark)
 
 **Example event**
 ```
@@ -483,7 +484,7 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 - **Supported levels (N<sup>1</sup>):** 50
 - **Update interval (N<sup>2</sup>):** 100 ms (default)
 - **Example:** BTCUSDT@delta_book.50
-- [Live Demo](http://52.221.164.49:1234/streams/BTCUSDFP@delta_book.50)
+- [Live Demo](http://52.221.164.49:1234/BTCUSDFP@delta_book.50)
 
 **Example event**
 ```
