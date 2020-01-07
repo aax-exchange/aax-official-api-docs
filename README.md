@@ -347,7 +347,8 @@ Individual trades when an order is executed. For each new connection, server sha
 
 - **Stream Name:** {symbol}@trade
 - **Example:** BTCUSDT@trade
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trade)
+- [Restful API Demo (last trade)](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trade)
+- [Restful API Demo (multiple trades)](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trades?limit=2000)
 
 **Example event**
 ```
