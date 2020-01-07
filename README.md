@@ -318,6 +318,7 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 - **Supported levels (N<sup>1</sup>):** 20, 50
 - **Update interval (N<sup>2</sup>):** 300 ms
 - **Example:** BTCUSDT@book_50
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDT@book_50)
 
 **Example event**
 ```
@@ -346,6 +347,7 @@ Individual trades when an order is executed. For each new connection, server sha
 
 - **Stream Name:** {symbol}@trade
 - **Example:** BTCUSDT@trade
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trade)
 
 **Example event**
 ```
@@ -365,6 +367,7 @@ Real-time candlesticks.
 - **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
 - **Update interval:** 1 second
 - **Example:** BTCUSDT@1m_candles
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDT@1m_candles)
 
 **Example event**
 ```
@@ -391,13 +394,14 @@ Volume is the accumulated volume traded since the start time of a candlestick.
 {"c":"3604.30000000","e":"BTCUSDT@15m_candles","h":"3604.30000000","l":"3604.30000000","o":"3604.30000000","s":1550199600,"t":1550199600,"v":"0.00000000"}
 ```
 
-## All Tickers Stream
+## Tickers Stream
   
 Summary of all available symbols. It contains open, high, low, close and volumes of the last 24hrs.
 Server initially sends all the tickers to client immediately after connected, and then it sends only the tickers that are changed since last update every N seconds. 
 
 - **Stream Name:** tickers
 - **Update interval (N):** 2 seconds
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/tickers)
 
 **Example event**
 ```
@@ -443,6 +447,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 - **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
 - **Update interval:** 1 second
 - **Example:** BTCUSDFP_INDEX@1m_candles
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/EOSBTC_INDEX@1m_candles)
 
 **Example event**
 ```
@@ -464,7 +469,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 - **Stream Name:**  {symbol}@mark
 - **Update interval:** Variable
 - **Example:** BTCUSDFP@mark
-- [Restful API Demo](http://52.221.164.49:1234/BTCUSDFP@mark)
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@mark)
 
 **Example event**
 ```
@@ -484,7 +489,7 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 - **Supported levels (N<sup>1</sup>):** 50
 - **Update interval (N<sup>2</sup>):** 100 ms (default)
 - **Example:** BTCUSDT@delta_book.50
-- [Restful API Demo](http://52.221.164.49:1234/BTCUSDFP@delta_book.50)
+- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@delta_book.50)
 
 **Example event**
 ```
