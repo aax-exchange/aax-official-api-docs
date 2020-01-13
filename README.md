@@ -318,7 +318,7 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 - **Supported levels (N<sup>1</sup>):** 20, 50
 - **Update interval (N<sup>2</sup>):** 300 ms
 - **Example:** BTCUSDT@book_50
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDT@book_50)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDT@book_50)
 
 **Example event**
 ```
