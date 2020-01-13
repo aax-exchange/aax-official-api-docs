@@ -347,8 +347,8 @@ Individual trades when an order is executed. For each new connection, server sha
 
 - **Stream Name:** {symbol}@trade
 - **Example:** BTCUSDT@trade
-- [Restful API Demo (last trade)](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trade)
-- [Restful API Demo (multiple trades)](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@trades?limit=2000)
+- [Restful API Demo (last trade)](https://api.aax.com/marketdata/v1.1/BTCUSDFP@trade)
+- [Restful API Demo (multiple trades)](https://api.aax.com/marketdata/v1.1/BTCUSDFP@trades?limit=2000)
 
 **Example event**
 ```
@@ -368,7 +368,7 @@ Real-time candlesticks.
 - **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
 - **Update interval:** 1 second
 - **Example:** BTCUSDT@1m_candles
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDT@1m_candles)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDT@1m_candles)
 
 **Example event**
 ```
@@ -402,7 +402,7 @@ Server initially sends all the tickers to client immediately after connected, an
 
 - **Stream Name:** tickers
 - **Update interval (N):** 2 seconds
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/tickers)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/tickers)
 
 **Example event**
 ```
@@ -448,7 +448,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 - **Supported timeframes:** 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 8h, 1d
 - **Update interval:** 1 second
 - **Example:** BTCUSDFP_INDEX@1m_candles
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/EOSBTC_INDEX@1m_candles)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/EOSBTC_INDEX@1m_candles)
 
 **Example event**
 ```
@@ -470,7 +470,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 - **Stream Name:**  {symbol}@mark
 - **Update interval:** Variable
 - **Example:** BTCUSDFP@mark
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@mark)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDFP@mark)
 
 **Example event**
 ```
@@ -490,7 +490,7 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 - **Supported levels (N<sup>1</sup>):** 50
 - **Update interval (N<sup>2</sup>):** 100 ms (default)
 - **Example:** BTCUSDT@delta_book.50
-- [Restful API Demo](https://api.dev.atomintl.com/marketdata/v1.1/BTCUSDFP@delta_book.50)
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDFP@delta_book.50)
 
 **Example event**
 ```
