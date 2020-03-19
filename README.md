@@ -417,6 +417,7 @@ Server initially sends all the tickers to client immediately after connected, an
         "l": "6573.2",        // Low price
         "c": "6573.2",        // Close price
         "v": "1500",          // Quote volume (price x qty for spot, qty for futures)
+        "a": "9859500",       // Volume amount in USD
         "d": "2.361"          // Difference in percentages ((close-open)/open) * 100.0
       }    
     ]
