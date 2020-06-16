@@ -502,3 +502,22 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
   "t":1572858173963                         // Event time (milliseconds)
 }
 ```
+
+
+## Historical Candlesticks
+
+Parameters:
+- **symbol** Compulsory
+- **timeframe** Compulsory
+- **start - timestamp of the first candlestick** Optional
+- **end - timestamp of the last candlestick** Optional
+- **count - number of candlesticks** Optional
+
+Parameter combinations:
+- **start + end:** 
+- **count + end:** 
+
+
+
+
+
