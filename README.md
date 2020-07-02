@@ -520,10 +520,11 @@ Parameter combinations:
 **Example Response**
 ```
 {"data":[
-  [2.3014,2.3014,2.2925,2.2925,998965.396659],  // first candlestick
-  [2.2925,2.3014,2.2925,2.3014,2034506.3287]    // 2nd candlestick and so on..
+  // each element in the array is an array of open,high,low,close,volume,start_time_of_the_candlestick
+  //
+  [2.3014,2.3014,2.2925,2.2925,998965.396659,1592540760],  // first candlestick
+  [2.2925,2.3014,2.2925,2.3014,2034506.3287,1592540820]    // 2nd candlestick and so on..
  ],
- "s":1592540760,  // start time of the first candlestick in the returned data
  "success":true,  // whether the request is accepted and successful
  "t":1592979595   // the generation time of this response
  }
