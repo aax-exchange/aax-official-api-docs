@@ -489,7 +489,7 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
 
 - **Stream Name:** {symbol}@delta_book.{level}
 - **Supported levels (N<sup>1</sup>):** 50
-- **Update interval (N<sup>2</sup>):** 100 ms (default)
+- **Update interval (N<sup>2</sup>):** 300 ms (default)
 - **Example:** BTCUSDT@delta_book.50
 - [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDFP@delta_book.50)
 
