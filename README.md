@@ -485,7 +485,7 @@ curl -d '{"time": 1564143433, "symbols": {"BTCUSDFP": 9000.12,"ETHUSDFP": 200.12
 ## Delta Order Book
   
 
-Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> milliseconds. If the quantity is 0, remove that price level. If the same price level exists in client's application, update the latest quantity. There is no guarantee the price levels are in any order. It is guaranteed that after merging each message, the bid and ask sides shall not exceed N<sup>1</sup> levels. Make sure you clear your local copy of the order book on re-connection.
+Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> milliseconds. If the quantity is 0, remove that price level. If the same price level exists in client's application, update the latest quantity. There is no guarantee the price levels are in any order. It is guaranteed that after merging each message, the bid and ask sides shall not exceed N<sup>1</sup> levels. Make sure you clear your local copy of the order book on re-connection. The first message is guaranteed to be a snapshot of the whole book of top N<sup>1</sup> levels, subsequent messages are always delta updates.
 
 - **Stream Name:** {symbol}@delta_book.{level}
 - **Supported levels (N<sup>1</sup>):** 50
