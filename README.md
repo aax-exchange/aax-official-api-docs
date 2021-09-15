@@ -5,12 +5,12 @@ AAX coin2coin Exchange REST API
 **Version:** 1.0
 
 **Terms of service:**  
-http://www.atomintl.com
+http://www.aax.com
 
 **Contact information:**  
 atomintl  
-www.atomintl.com  
-atomintl at atomintl.com  
+www.aax.com  
+atomintl at aax.com  
 
 ### Security
 ---
