@@ -560,9 +560,19 @@ Order book changes of the top N<sup>1</sup> bids and asks, updated every N<sup>2
   "e":"BTCUSDT@delta_book.50",              // event name
   "bids": [ [9000.12345678, 0.123456] ],    // array of price and qty on bid side
   "asks": [ [9001, 0.83] ],                 // array of price and qty on ask side
-  "t":1572858173963                         // Event time (milliseconds)
+  "t":1572858173963,                        // Event time (milliseconds)
+  "is_snapshot": true                       // snapshot flag (The first message only)
 }
 ```
+
+## Delta Order Book (fast)
+
+Same as the above'Delta Order Book'. Except the stream name and the update interval.
+
+- **Stream Name:** {symbol}@delta_book_fast
+- **Supported levels (N<sup>1</sup>):** 50
+- **Update interval (N<sup>2</sup>):** 2 ms (default)
+- **Example:** BTCUSDT@delta_book_fast
 
 
 ## Historical Candlesticks
