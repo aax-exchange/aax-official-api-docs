@@ -245,17 +245,19 @@ Market Data Services
 ================
 Websocket APIs
 
-**Version:** 1.0  
+**Version:** 2.0  
 
 ## Overview
 All websocket data can be accessed via wss://{example_host}/ws/2/{streamName1}/{streamName2}
 
 One or multiple streams can be subscribed in each connection. There are different streams for different market data and each has independent update intervals. The followings are a list of streams available:
 
-- Orderbook (snapshot)
-- Trades
-- Tickers (real-time)
+- Orderbook    (snapshot & fast snapshot)
+- Trades       (real-time & near-real-time)
+- Tickers      (real-time)
 - Candlesticks (real-time)
+
+Notes: The number of streams on the URL is limited to 5 (including 5)
 
 All streams are also available in restful APIs via https://{example_host}/{streamName}?limit=100, with one additional stream for recently traded list as shown below:
 
@@ -285,9 +287,9 @@ or
 
 Then you will receive a reply event:
 ```
-{"e":”reply”,"status":"ok"}
+{"e":”reply”,"status":"ok","subscribe":"BTCUSDT@book_50"}
 or
-{"e":”reply”,"status":"error"}
+{"e":”reply”,"status":"error","unsubscribe":"BTCUSDT@book_50"}
 ```
 
 ## Empty event
@@ -307,6 +309,8 @@ Server may send system event to client to indicate a system status change. Possi
 **Example**
 ```
 {"e":"system","status":[{"spots":"active"},{"futures":"active"}]}
+or
+{"e":"system","status":[{"all":"active"}]}
 ```
 
 
@@ -341,9 +345,42 @@ Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> mil
 ```
 
 
+## Orderbook Stream (fast snapshot)
+  
+Snapshot of the top N<sup>1</sup> bids and asks, updated every N<sup>2</sup> milliseconds.
+
+- **Stream Name:** {symbol}@fast_book_{level}
+- **Supported levels (N<sup>1</sup>):** 20, 50
+- **Update interval (N<sup>2</sup>):** 100 ms
+- **Example:** BTCUSDT@fast_book_50
+- [Restful API Demo](https://api.aax.com/marketdata/v1.1/BTCUSDT@fast_book_50)
+
+**Example event**
+```
+{
+  "e": "BTCUSDT@fast_book_50",
+  "t": 123456789000,    // Event time (milliseconds)
+  "bids": [             // Bids to be updated
+    [
+      "0.0024",         // price level to be updated
+      "10"              // quantity
+    ]
+  ],
+  "asks": [             // Asks to be updated
+    [
+      "0.0026",         // price level to be updated
+      "100"             // quantity
+    ]
+  ]
+}
+```
+
+
 ## Trades Stream
   
 Individual trades when an order is executed. For each new connection, server shall send the last 50 trades to it. There is a rate limit of how many trades server will send to clients.
+
+Always this trade stream updated every 300ms milliseconds.
 
 - **Stream Name:** {symbol}@trade
 - **Example:** BTCUSDT@trade
@@ -354,9 +391,33 @@ Individual trades when an order is executed. For each new connection, server sha
 ```
 {
   "e": "BTCUSDT@trade",
-  "t": 123456789000,    // Event time (milliseconds)
-  "p": "6573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
-  "q": "15"             // Quantity
+  "t": 1631675297816,    // Event time (milliseconds)
+  "p": "46573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
+  "q": "1.5",            // Quantity
+  "s": "buy",            // Direction (buy/sell for spot, long/short for futures)
+  "i": "T1iO5HeaDC"      // Trade ID  
+}
+```
+
+## Trades Stream (real-time)
+  
+Individual trades when an order is executed. For each new connection, server never send prev old trades to it. This is a realtime stream that sends the realtime-trade since client connected.
+
+Notes: This stream is only open to IP whitelists.
+
+- **Stream Name:** {symbol}@fast_trade
+- **Example:** BTCUSDT@fast_trade
+- [Restful API Demo (last trade)](https://api.aax.com/marketdata/v1.1/BTCUSDT@fast_trade)
+
+**Example event**
+```
+{
+  "e": "BTCUSDT@fast_trade",
+  "t": 1631675297816,    // Event time (milliseconds)
+  "p": "46573.2",        // Price (Buy: positive, Sell: negative) e.g. -6573.2 for Sell
+  "q": "1.5",            // Quantity
+  "s": "buy",            // Direction (buy/sell for spot, long/short for futures)
+  "i": "T1iO5HeaDC"      // Trade ID
 }
 ```
 
